@@ -1,4 +1,9 @@
 export class Shaft {    
-    constructor(stiffness: number) {}
-    calculateShaftTorque(inputAngle) {}
+    constructor(private stiffness: number) {
+    }
+
+    calculateShaftTorque(inputAngle: number) {
+        let torque = this.stiffness * inputAngle;
+        return torque;
+    }
 }
