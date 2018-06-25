@@ -7,7 +7,7 @@
     "strict": true,
     "noImplicitAny": false,
     "esModuleInterop": true,
-    "watch": true
+    "watch": false
   },
   "include": [
     "**/*"
