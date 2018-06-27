@@ -1,10 +1,11 @@
-import {logger} from './logger'
+import {Utilities} from './utilities';
+
 export class Shaft {    
     constructor(private stiffness: number) {
     }
 
     calculateShaftTorque(inputAngle: number) {
-        logger.logMessage('info', 'calculating shaft torque');
+        Utilities.logger.info("Calculating shaft torque.");
         let torque = this.stiffness * inputAngle;
         return torque;
     }
