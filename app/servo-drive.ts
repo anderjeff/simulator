@@ -4,7 +4,8 @@ export class ServoDrive {
     // values that can be set by external program.
     testInProcess: boolean = false;
     controllerInitialized: number = 0;
-    currentTorque: number = 0;
+    private _currentTorque: number = 0;
+    private _currentAngle: number = 0;
     watchdogValue: number = 100;
     ccwTorqueLimit: number = 20000;
     cwTorqueLimit: number = -20000;
@@ -13,30 +14,25 @@ export class ServoDrive {
     diffLimit: number = 100;
     torqueDirection: number = 1;
     testType: number = 3;
-    operatorEndsTest: number = 1;
+    operatorEndsTest: number = 1;   
 
-    runTest(testCondition: TestCondition) {
-        while(!testCondition.isComplete) {
-
-            // do all the stuff we need to to do run a single cycle..
-
-            // add one cycle.
-            testCondition.cycleCount += 1;
-        }
+    set CurrentTorque(value: number) {
+        this._currentTorque = value;
     }
 
-    updateTestParameters() {
-        // pause the test to update the parameters.
-        if(this.testInProcess) {
-            this.testInProcess = false;
+    get CurrentAngle() {
+        return this._currentAngle;
+    }
 
-            // do what you need
+    goToZero(degPerSecond: number) {
 
+    }
 
+    rotateClockwise(degPerSecond: number) {
 
+    }
 
-            // resume
-            this.testInProcess = true;
-        }    
+    rotateCounterClockwise(degPerSecond: number) {
+
     }
 }
